@@ -1,8 +1,15 @@
 import Body from "./components/Body";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <div className='text-3xl font-bold text-green-800'>
-      <Body></Body>
+    <div>
+      <Provider store={appStore}>
+        <BrowserRouter>
+            <Body/>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }
