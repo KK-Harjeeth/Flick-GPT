@@ -18,7 +18,8 @@ function Header() {
         });
     }
     useEffect(()=>{
-        onAuthStateChanged(auth, (user) => {
+        
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
               // User is signed in, see docs for a list of available properties
               // https://firebase.google.com/docs/reference/js/auth.user
@@ -33,13 +34,17 @@ function Header() {
               navigate('/')
             }
           });
+
+          //unsubscribe when the component unmounts
+
+          return ()=>unsubscribe();
     },[]);
   return (
     <div className='absolute px-8 py-2 z-10 w-full flex justify-between'>
       <img className='w-16' src={logo} alt="logo" />
       {user && <div className='flex p-4'>
         <img className='w-10 h-10' src="https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229" alt="usericon" />
-        <button onClick={handleSignOut} className='mb-2 p-2 hover:underline'>Sign Out</button>
+        <button onClick={handleSignOut} className='mb-2 p-2 text-white hover:underline'>Sign Out</button>
       </div>}
     </div>
   )

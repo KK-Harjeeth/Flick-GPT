@@ -15,6 +15,13 @@
     - search bar
     - Movie Suggestions 
 
+# Planning :
+- MainContainer 
+    - VideoBackground 
+    - VideoTitle 
+- Secondary Container 
+    - MovieList * n 
+        - cards * n
 
 
 # Procedure :
@@ -66,7 +73,12 @@
     - update profile API 
 
 ### `BUG FIX` : if the user is not logged in redirect `/browse` to `login page` and vice-versa
-
+- unsubscribed to `onAuthStateChanged` callback
 - # TMDB API :
     - fetch movies from `TMDB` 
-    
+    - Go to TMDB API website and `login` 
+    - get an access token by registering to an `TMDB API`
+    - get data from TMDB now playing movies list API
+- creating `movieSlice`
+- created `useNowPlayingMovies` custom hook
+- added background video using `TMDB videos API`, `Youtube Embed Code` and enabled autoplay and mute

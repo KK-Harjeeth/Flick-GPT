@@ -16,8 +16,6 @@ const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const dispatch = useDispatch();
     const handleButtonClick=()=>{
-        console.log(email.current.value);
-        console.log(password.current.value);
         // Check if passwords match
         if (password.current.value !== confirmPassword.current.value) {
             setErrorMessage("Passwords do not match.");
@@ -31,7 +29,6 @@ const SignUp = () => {
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
-                console.log(user)
                 updateProfile(user, {
                     displayName: name.current.value, photoURL: "https://occ-0-4857-2186.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229"
                   }).then(() => {
