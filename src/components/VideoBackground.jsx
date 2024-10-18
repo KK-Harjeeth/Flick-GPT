@@ -11,11 +11,9 @@ function VideoBackground({ movieId }) {
       API_OPTIONS
     );
     const json = await data.json();
-    console.log(json, "video background");
     const trailers = json.results.filter((video) => video.type === "Trailer");
     const trailer = trailers[0];
     setTrailerId(trailer.key)
-    console.log(trailer);
   };
   useEffect(() => {
     getMovieTrailer();

@@ -1,10 +1,18 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { useState } from 'react';
 function VideoTitle(props) {
+    const [isVisible, setIsVisible] = useState(true);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          setIsVisible(false);
+        }, 5000); // 5000ms = 5 seconds
+    
+        return () => clearTimeout(timer); // Cleanup timer on component unmount
+      }, []);
   return (
     <div className='w-screen aspect-video pt-[20%] px-12 absolute text-white bg-gradient-to-r from-black'>
-      <h1 className='text-6xl font-bold'>{props.title}</h1>
-      <p className='py-6 text-lg w-1/4'>Description : {props.overview}</p>
+      <h1 className='text-6xl font-bold mb-4'>{props.title}</h1>
+      {isVisible &&<p className='py-6 text-lg w-[30%] -mt-5'>{props.overview}</p>}
       <div className='flex space-x-4'>
         {/* <button>Play</button>
         <button>more info ⓘ</button> */}

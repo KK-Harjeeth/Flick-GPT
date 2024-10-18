@@ -82,3 +82,7 @@
 - creating `movieSlice`
 - created `useNowPlayingMovies` custom hook
 - added background video using `TMDB videos API`, `Youtube Embed Code` and enabled autoplay and mute
+
+- added all `movieLists` in browse page using `TMDB API's`
+
+# GPT SEARCH FEATURE 
