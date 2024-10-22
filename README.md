@@ -1,5 +1,5 @@
 # Flick-GPT
-[![Video Title]()](https://github.com/user-attachments/assets/81f87ada-7040-46d4-bcbb-56a2bde5b0b0)
+[![Application Features:]()](https://github.com/user-attachments/assets/81f87ada-7040-46d4-bcbb-56a2bde5b0b0)
 # Features: 
 - Login / SignUp
     - SignIn / SignUp form
